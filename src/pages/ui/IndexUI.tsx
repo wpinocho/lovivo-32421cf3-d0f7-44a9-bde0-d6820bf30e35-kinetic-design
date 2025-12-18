@@ -53,16 +53,20 @@ export const IndexUI = ({ logic }: IndexUIProps) => {
           </h1>
         </div>
 
-        {/* Hero Product Image */}
+        {/* Hero Product Video */}
         <div 
           className="relative z-10 max-w-5xl mx-auto px-4"
           style={{
             transform: `translateY(${scrollY * 0.15}px)`
           }}
         >
-          <img 
-            src="/hero-headphones.jpg" 
-            alt="KINETIC PRO Headphones"
+          <video 
+            src="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/store-videos/32421cf3-d0f7-44a9-bde0-d6820bf30e35/hero-headphones-spin.mp4"
+            poster="https://ptgmltivisbtvmoxwnhd.supabase.co/storage/v1/object/public/product-images/32421cf3-d0f7-44a9-bde0-d6820bf30e35/hero-headphones-spin-poster.jpg"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-auto drop-shadow-[0_50px_100px_rgba(204,255,0,0.15)]"
           />
         </div>
