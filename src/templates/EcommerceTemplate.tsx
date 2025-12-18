@@ -45,7 +45,7 @@ export const EcommerceTemplate = ({
   const { hasCollections, loading: loadingCollections } = useCollections()
 
   const header = (
-    <div className={`py-2 ${headerClassName}`}>
+    <div className={`py-4 backdrop-blur-xl bg-background/80 ${headerClassName}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -57,20 +57,20 @@ export const EcommerceTemplate = ({
               {!loadingCollections && hasCollections && (
                 <ScrollLink 
                   to="/#collections" 
-                  className="text-foreground/70 hover:text-foreground transition-colors"
+                  className="text-white/50 hover:text-white transition-colors font-mono text-xs tracking-widest uppercase"
                 >
                   Collections
                 </ScrollLink>
               )}
               <ScrollLink 
                 to="/#products" 
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-white/50 hover:text-white transition-colors font-mono text-xs tracking-widest uppercase"
               >
                 Products
               </ScrollLink>
               <Link 
                 to="/blog" 
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-white/50 hover:text-white transition-colors font-mono text-xs tracking-widest uppercase"
               >
                 Blog
               </Link>
@@ -86,12 +86,12 @@ export const EcommerceTemplate = ({
                 variant="ghost"
                 size="icon"
                 onClick={openCart}
-                className="relative"
+                className="relative hover:bg-white/10"
                 aria-label="Ver carrito"
               >
-                <ShoppingCart className="h-5 w-5" />
+                <ShoppingCart className="h-5 w-5 text-white" />
                 {totalItems > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-xs font-bold font-mono rounded-full h-5 w-5 flex items-center justify-center">
                     {totalItems > 99 ? '99+' : totalItems}
                   </span>
                 )}
@@ -103,7 +103,7 @@ export const EcommerceTemplate = ({
         {/* Page Title */}
         {pageTitle && (
           <div className="mt-6">
-            <h1 className="text-3xl font-bold text-foreground">
+            <h1 className="text-3xl font-bold text-foreground tracking-wider uppercase">
               {pageTitle}
             </h1>
           </div>
@@ -113,30 +113,30 @@ export const EcommerceTemplate = ({
   )
 
   const footer = (
-    <div className={`bg-black text-white py-12 ${footerClassName}`}>
+    <div className={`bg-black text-white py-16 ${footerClassName}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
             <BrandLogoLeft />
-            <p className="mt-4 text-white/70">
-              Your trusted online store
+            <p className="mt-4 text-white/50 font-mono text-sm">
+              Industrial Dark Luxury
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Links</h3>
+            <h3 className="font-mono text-xs tracking-widest mb-4 text-white/50 uppercase">QUICK LINKS</h3>
             <div className="space-y-2">
               <Link 
                 to="/" 
-                className="block text-white/70 hover:text-white transition-colors"
+                className="block text-white/70 hover:text-white transition-colors font-mono text-sm"
               >
                 Home
               </Link>
               <Link 
                 to="/blog" 
-                className="block text-white/70 hover:text-white transition-colors"
+                className="block text-white/70 hover:text-white transition-colors font-mono text-sm"
               >
                 Blog
               </Link>
@@ -145,13 +145,13 @@ export const EcommerceTemplate = ({
 
           {/* Social Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Follow Us</h3>
+            <h3 className="font-mono text-xs tracking-widest mb-4 text-white/50 uppercase">CONNECT</h3>
             <SocialLinks />
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-white/20 text-center text-white/70">
-          <p>&copy; 2025 Your Store. All rights reserved.</p>
+        <div className="mt-12 pt-8 border-t border-white/10 text-center text-white/30">
+          <p className="font-mono text-xs tracking-widest">&copy; 2025 KINETIC AUDIO. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </div>

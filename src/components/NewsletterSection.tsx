@@ -16,30 +16,30 @@ export const NewsletterSection = () => {
   return (
     <HeadlessNewsletter>
       {(logic) => (
-        <section className="bg-muted/30 py-16 border-y">
+        <section className="bg-[#09090b] py-20 border-y border-white/10">
           <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             {logic.success ? (
               <div className="space-y-4">
                 <div className="flex justify-center">
-                  <div className="bg-primary/10 rounded-full p-3">
-                    <Mail className="h-8 w-8 text-primary" />
+                  <div className="glass-card p-4 rounded-full">
+                    <Mail className="h-8 w-8 text-accent" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">
-                  Thanks for subscribing!
+                <h3 className="text-3xl font-bold text-foreground tracking-wider uppercase">
+                  TRANSMISSION RECEIVED
                 </h3>
-                <p className="text-muted-foreground">
-                  You'll receive our best offers and promotions soon.
+                <p className="text-muted-foreground font-mono text-sm">
+                  You're now connected to KINETIC updates.
                 </p>
               </div>
             ) : (
               <div className="space-y-6">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-foreground">
-                    Want promotional emails?
+                <div className="space-y-3">
+                  <h3 className="text-3xl md:text-4xl font-bold text-foreground tracking-wider uppercase">
+                    STAY CONNECTED
                   </h3>
-                  <p className="text-lg text-muted-foreground">
-                    Subscribe to our newsletter and get exclusive offers
+                  <p className="text-muted-foreground font-mono text-sm">
+                    Exclusive releases. Technical updates. Early access.
                   </p>
                 </div>
                 
@@ -52,24 +52,24 @@ export const NewsletterSection = () => {
                 >
                   <Input 
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder="YOUR@EMAIL.COM"
                     value={logic.email}
                     onChange={(e) => logic.setEmail(e.target.value)}
                     disabled={logic.isSubmitting}
-                    className="flex-1"
+                    className="flex-1 glass-card bg-black/40 border-white/20 text-white placeholder:text-white/30 font-mono text-sm focus:border-accent"
                     required
                   />
                   <Button 
                     type="submit"
                     disabled={logic.isSubmitting}
-                    className="sm:w-auto"
+                    className="sm:w-auto bg-accent hover:bg-accent/80 text-accent-foreground font-mono font-bold tracking-wider"
                   >
-                    {logic.isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                    {logic.isSubmitting ? 'SENDING...' : 'SUBSCRIBE'}
                   </Button>
                 </form>
                 
                 {logic.error && (
-                  <p className="text-sm text-destructive">
+                  <p className="text-sm text-destructive font-mono">
                     {logic.error}
                   </p>
                 )}

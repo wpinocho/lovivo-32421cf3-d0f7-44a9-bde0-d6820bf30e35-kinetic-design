@@ -1,14 +1,13 @@
 export const BrandLogoLeft = () => {
   return (
     <a href="/" aria-label="Home" className="ml-2 flex items-center">
-      {/* TEMPLATE: Replace /logo.svg with your brand logo */}
       <img 
-        src="/logo.svg" 
-        alt="Logo"
-        className="h-8 w-auto object-contain" 
+        src="/logo.jpg" 
+        alt="KINETIC"
+        className="h-7 w-auto object-contain brightness-0 invert" 
         onError={(e) => {
           e.currentTarget.style.display = 'none';
-          e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-black">YourBrand</span>';
+          e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold tracking-widest text-white">KINETIC</span>';
         }}
       />
     </a>
